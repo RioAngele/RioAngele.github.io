@@ -6,7 +6,7 @@
   <link href="http://rioangele.github.io/atom.xml" rel="self"/>
   
   <link href="http://rioangele.github.io/"/>
-  <updated>2023-07-20T15:08:35.510Z</updated>
+  <updated>2023-10-25T12:13:21.563Z</updated>
   <id>http://rioangele.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1.交易逆序对的总数</title>
+    <link href="http://rioangele.github.io/2023/10/25/jiao-yi-ni-xu-dui-de-zong-shu/"/>
+    <id>http://rioangele.github.io/2023/10/25/jiao-yi-ni-xu-dui-de-zong-shu/</id>
+    <published>2023-10-25T12:06:31.000Z</published>
+    <updated>2023-10-25T12:13:21.563Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」。请设计一个程序，输入一段时间内的股票交易记录 record，返回其中存在的「交易逆序对」总数。&lt;/p&gt;
+&lt;p&gt;示例 1:&lt;/p&gt;
+&lt;p&gt;输入：record = [9, 7, 5, 4,</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://rioangele.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://rioangele.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="JAVA" scheme="http://rioangele.github.io/tags/JAVA/"/>
+    
+  </entry>
   
   <entry>
     <title>倒霉的一天</title>
