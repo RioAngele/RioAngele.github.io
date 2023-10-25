@@ -8,7 +8,8 @@
     <meta name="keywords" content="1.交易逆序对的总数, 辉光之手">
     <meta name="description" content="在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」。请设计一个程序，输入一段时间内的股票交易记录 record，返回其中存在的「交易逆序对」总数。
 示例 1:
-输入：record = [9, 7, 5, 4, ">
+
+输入：record = [9, 7, 5, 4,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -268,6 +269,14 @@
                                 <span class="chip bg-color">JAVA</span>
                             </a>
                         
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%86%E6%B2%BB/">
+                                <span class="chip bg-color">分治</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -333,53 +342,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」。请设计一个程序，输入一段时间内的股票交易记录 record，返回其中存在的「交易逆序对」总数。</p>
-<p>示例 1:</p>
-<p>输入：record = [9, 7, 5, 4, 6]<br>输出：8<br>解释：交易中的逆序对为 (9, 7), (9, 5), (9, 4), (9, 6), (7, 5), (7, 4), (7, 6), (5, 4)。</p>
-<p>限制：</p>
+                <p>在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」。请设计一个程序，输入一段时间内的股票交易记录 <code>record</code>，返回其中存在的「交易逆序对」总数。</p>
+<p><strong>示例 1:</strong></p>
+<blockquote>
+<p><strong>输入：</strong>record = [9, 7, 5, 4, 6]<br><strong>输出：</strong>8<br><strong>解释：</strong>交易中的逆序对为 (9, 7), (9, 5), (9, 4), (9, 6), (7, 5), (7, 4), (7, 6), (5, 4)。</p>
+</blockquote>
+<p><strong>限制：</strong></p>
+<blockquote>
 <p>0 &lt;= record.length &lt;= 50000</p>
-<p><strong>思路</strong>：</p>
+</blockquote>
+<p><strong>思路：</strong></p>
 <p>分治，数组分为左右两部分，分别排序后，计算左右两部分之间对逆序对数量的贡献，再加上两部分内部对逆序对数量的贡献。</p>
-<pre class="line-numbers language-none"><code class="language-none">class Solution {
-    public int reversePairs(int[] record) {
-        int n=record.length;
-        return merge(record,0,n-1,(n-1)&gt;&gt;&gt;1);
-    }
-    private int merge(int[] record,int l,int r,int mid){
-        if(l&gt;=r){
-            return 0;
-        }
-        int[] a=new int[mid-l+1];
-        int[] b=new int[r-mid];
-        for(int i=l;i&lt;=mid;i++){
-            a[i-l]=record[i];
-        }
-        for(int i=mid+1;i&lt;=r;i++){
-            b[i-mid-1]=record[i];
-        }
-        Arrays.sort(a);
-        Arrays.sort(b);
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">reversePairs</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> record<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> n<span class="token operator">=</span>record<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">merge</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&gt;&gt;&gt;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> record<span class="token punctuation">,</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">,</span><span class="token keyword">int</span> mid<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>l<span class="token operator">&gt;=</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>mid<span class="token operator">-</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>r<span class="token operator">-</span>mid<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>l<span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>mid<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            a<span class="token punctuation">[</span>i<span class="token operator">-</span>l<span class="token punctuation">]</span><span class="token operator">=</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>r<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            b<span class="token punctuation">[</span>i<span class="token operator">-</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>record<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        int idx1=0;
-        int idx2=0;
-        int res=0;
-        int count=0;
-        while(idx1&lt;a.length&amp;&amp;idx2&lt;b.length){
-            if(a[idx1]&lt;=b[idx2]){
-                res+=count;
-                idx1++;
-                continue;
-            }
-            idx2++;
-            count++;
-        }
-        while(idx1&lt;a.length){
-            res+=count;
-            idx1++;
-        }
-        return res+merge(record,l,mid,(l+mid)&gt;&gt;&gt;1)+merge(record,mid+1,r,(r+mid+1)&gt;&gt;&gt;1);
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">int</span> idx1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> idx2<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> res<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>idx1<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token operator">&amp;&amp;</span>idx2<span class="token operator">&lt;</span>b<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>idx1<span class="token punctuation">]</span><span class="token operator">&lt;=</span>b<span class="token punctuation">[</span>idx2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                res<span class="token operator">+=</span>count<span class="token punctuation">;</span>
+                idx1<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            idx2<span class="token operator">++</span><span class="token punctuation">;</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>idx1<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            res<span class="token operator">+=</span>count<span class="token punctuation">;</span>
+            idx1<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token operator">+</span><span class="token function">merge</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span>l<span class="token punctuation">,</span>mid<span class="token punctuation">,</span><span class="token punctuation">(</span>l<span class="token operator">+</span>mid<span class="token punctuation">)</span><span class="token operator">&gt;&gt;&gt;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">merge</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>r<span class="token punctuation">,</span><span class="token punctuation">(</span>r<span class="token operator">+</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&gt;&gt;&gt;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -450,6 +463,14 @@
                             
                                 <a href="/tags/JAVA/">
                                     <span class="chip bg-color">JAVA</span>
+                                </a>
+                            
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%88%86%E6%B2%BB/">
+                                    <span class="chip bg-color">分治</span>
                                 </a>
                             
                         </div>
@@ -759,18 +780,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/10/25/jiao-yi-ni-xu-dui-de-zong-shu/">
+                <a href="/2023/10/25/2-shu-ju-liu-zhong-de-zhong-wei-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="1.交易逆序对的总数">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="2.数据流中的中位数">
                         
-                        <span class="card-title">1.交易逆序对的总数</span>
+                        <span class="card-title">2.数据流中的中位数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,9 +800,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -795,7 +815,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -805,6 +824,14 @@
                     
                     <a href="/tags/JAVA/">
                         <span class="chip bg-color">JAVA</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">排序</span>
+                    </a>
+                    
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
