@@ -5,7 +5,7 @@
 <head>
     <meta name="baidu-site-verification" content="codeva-mr82jPBcq6" />
     <meta charset="utf-8">
-    <meta name="keywords" content="辉光之手">
+    <meta name="keywords" content="标签: 笔试, 辉光之手">
     <meta name="description" content="城堡为爱守着秘密，而我为你守着回忆">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,53 +18,12 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>辉光之手</title>
+    <title>标签: 笔试 | 辉光之手</title>
     <link rel="icon" type="image/png" href="/favicon3.png">
     
 
 
-    <!-- index cover -->
-    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
-    <style>
-        .carousel-control {
-            width: 45px;
-            height: 45px;
-            line-height: 55px;
-            border-radius: 45px;
-            background: transparent;
-            cursor: pointer;
-            z-index: 100;
-        }
-        
-        #prev-cover {
-            position: absolute;
-            top: 48%;
-            left: 8px;
-        }
-        
-        #next-cover {
-            position: absolute;
-            top: 48%;
-            right: 8px;;
-        }
-        
-        #prev-cover i {
-            margin-right: 3px;
-        }
-        
-        #next-cover i {
-            margin-left: 3px;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, .4);
-        }
-        
-        .carousel-control i {
-            color: #fff;
-            font-size: 2.4rem;
-        }
-    </style>
+    <!-- bg-cover style     -->
 
 
 
@@ -85,6 +44,8 @@
 
 
 
+
+    
 
 
 
@@ -264,15 +225,9 @@
 
 </header>
 
-    
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item  white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -322,172 +277,108 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/RioAngele" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/RioAngele" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:a1921292838@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-    <a href="https://www.facebook.com/rioangele6" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/rioangele6" data-position="top" data-delay="50">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-
-
-
-
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;剑道真解
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            在你看不到的地方，总会有人比你更加付出更多，甚至就算是每时每刻都不会放过的人，也一样会有。这就是世界。就算你只是休息了一小会儿，那么或许会永远落后别人这么一小会儿的时间。不是你看不到，就代表别人会停下来等你。 世界就是如此残酷。不在乎你强大到何等地步，而在乎你比别人强出多少程度。--林菲
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="算法" style="background-color: #F9EBEA;">算法
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JAVA/" title="JAVA: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="JAVA" style="background-color: #F5EEF8;">JAVA
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8E%92%E5%BA%8F/" title="排序: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="排序" style="background-color: #D5F5E3;">排序
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/leetcode/" title="leetcode: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="leetcode" style="background-color: #E8F8F5;">leetcode
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%B5%8B%E8%AF%95/" title="测试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="测试" style="background-color: #FEF9E7;">测试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%88%86%E6%B2%BB/" title="分治: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="分治" style="background-color: #F8F9F9;">分治
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%97%A5%E5%B8%B8/" title="日常: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="日常" style="background-color: #82E0AA;">日常
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AC%94%E8%AF%95/" title="笔试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="笔试" style="background-color: #D7BDE2;">笔试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
         </div>
     </div>
 </div>
 
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
     
 
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="算法, JAVA, 笔试" data-aos="fade-up">
                 <div class="card">
                     <a href="/2023/10/26/2023-10-26-yong-you-bi-shi/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="2023.10.26用友笔试">
@@ -495,21 +386,7 @@
                             <span class="card-title">2023.10.26用友笔试</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                题目1：
-
-将姓名按照分数从大到小排序，分数都不相等。
-
-public class Solution {
-    /**
-     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
-     *
-     * 按
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2023-10-26
@@ -519,307 +396,18 @@ public class Solution {
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                                算法
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/tags/JAVA/">
-                            <span class="chip bg-color">JAVA</span>
-                        </a>
-                        
-                        <a href="/tags/%E7%AC%94%E8%AF%95/">
-                            <span class="chip bg-color">笔试</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/10/25/2-shu-ju-liu-zhong-de-zhong-wei-shu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="2.数据流中的中位数">
-                            
-                            <span class="card-title">2.数据流中的中位数</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                中位数 是有序整数列表中的中间值。如果列表的大小是偶数，则没有中间值，中位数是两个中间值的平均值。
-例如，[2,3,4] 的中位数是 3[2,3] 的中位数是 (2 + 3) / 2 = 2.5设计一个支持以下两种操作的数据结构：
-
-voi
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-25
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/tags/JAVA/">
-                            <span class="chip bg-color">JAVA</span>
-                        </a>
-                        
-                        <a href="/tags/%E6%8E%92%E5%BA%8F/">
-                            <span class="chip bg-color">排序</span>
-                        </a>
-                        
-                        <a href="/tags/leetcode/">
-                            <span class="chip bg-color">leetcode</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/10/25/jiao-yi-ni-xu-dui-de-zong-shu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="1.交易逆序对的总数">
-                            
-                            <span class="card-title">1.交易逆序对的总数</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」。请设计一个程序，输入一段时间内的股票交易记录 record，返回其中存在的「交易逆序对」总数。
-示例 1:
-
-输入：record = [9, 7, 5, 4,
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-25
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/tags/JAVA/">
-                            <span class="chip bg-color">JAVA</span>
-                        </a>
-                        
-                        <a href="/tags/leetcode/">
-                            <span class="chip bg-color">leetcode</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%88%86%E6%B2%BB/">
-                            <span class="chip bg-color">分治</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/07/20/dao-mei-de-yi-tian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="倒霉的一天">
-                            
-                            <span class="card-title">倒霉的一天</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                地点​	湖北武汉
-时间​	2023年7月20日晚
-起因​	头发太长了，想要去理个发，这会正好雨停了。
-经过​	在美团上找了家最近的，价格27.5比南京的还要贵。一进门，美团下单，洗头，随后坐在椅子上，理发师问我，怎么剪，我说稍微短一点，薄一
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%97%A5%E8%AE%B0/" class="post-category">
-                                    日记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%97%A5%E5%B8%B8/">
-                            <span class="chip bg-color">日常</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/07/18/test/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="不能说的秘密">
-                            
-                            <span class="card-title">不能说的秘密</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                冷咖啡离开了杯垫　我忍住的情绪在很后面拼命想挽回的从前　在我脸上依旧清晰可见
-最美的不是下雨天　是曾与妳躲过雨的屋簷回忆的画面　在荡著秋千　梦开始不甜
-妳说把爱渐渐放下会走更远　又何必去改变　已错过的时间妳用妳的指尖阻止我说再见　想像妳在身
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    测试
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                            <span class="chip bg-color">测试</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/07/18/hello-world/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="辉光之手">
-                            
-                            <span class="card-title">辉光之手</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Welcome to my world !
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                RioAngele
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
-
 </main>
 
 
